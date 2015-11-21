@@ -13,7 +13,7 @@
 		98581A7F1BF7335800D5AC42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98581A7D1BF7335800D5AC42 /* Main.storyboard */; };
 		98581A811BF7335800D5AC42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98581A801BF7335800D5AC42 /* Assets.xcassets */; };
 		98581A841BF7335800D5AC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98581A821BF7335800D5AC42 /* LaunchScreen.storyboard */; };
-		98D4AAB31C00154300B332A7 /* JovisTopTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D4AAB21C00154300B332A7 /* JovisTopTabBar.m */; };
+		98D4AABF1C0018D400B332A7 /* JovisTopTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D4AABE1C0018D400B332A7 /* JovisTopTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		98581A801BF7335800D5AC42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98581A831BF7335800D5AC42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98581A851BF7335800D5AC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98D4AAB11C00154300B332A7 /* JovisTopTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JovisTopTabBar.h; sourceTree = "<group>"; };
-		98D4AAB21C00154300B332A7 /* JovisTopTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JovisTopTabBar.m; sourceTree = "<group>"; };
+		98D4AABD1C0018D400B332A7 /* JovisTopTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JovisTopTabBar.h; sourceTree = "<group>"; };
+		98D4AABE1C0018D400B332A7 /* JovisTopTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JovisTopTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 		98581A681BF7335800D5AC42 = {
 			isa = PBXGroup;
 			children = (
-				98D4AAB01C00154300B332A7 /* JovisTopTabBar */,
+				98D4AABC1C0018D400B332A7 /* JovisTopTabBar */,
 				98581A731BF7335800D5AC42 /* JovisTopTabBarDemo */,
 				98581A721BF7335800D5AC42 /* Products */,
 			);
@@ -83,13 +83,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		98D4AAB01C00154300B332A7 /* JovisTopTabBar */ = {
+		98D4AABC1C0018D400B332A7 /* JovisTopTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				98D4AAB11C00154300B332A7 /* JovisTopTabBar.h */,
-				98D4AAB21C00154300B332A7 /* JovisTopTabBar.m */,
+				98D4AABD1C0018D400B332A7 /* JovisTopTabBar.h */,
+				98D4AABE1C0018D400B332A7 /* JovisTopTabBar.m */,
 			);
-			path = JovisTopTabBar;
+			name = JovisTopTabBar;
+			path = ../JovisTopTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98581A7C1BF7335800D5AC42 /* ViewController.m in Sources */,
-				98D4AAB31C00154300B332A7 /* JovisTopTabBar.m in Sources */,
+				98D4AABF1C0018D400B332A7 /* JovisTopTabBar.m in Sources */,
 				98581A791BF7335800D5AC42 /* AppDelegate.m in Sources */,
 				98581A761BF7335800D5AC42 /* main.m in Sources */,
 			);
