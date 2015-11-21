@@ -19,8 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.autoresizesSubviews = NO;
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"Demo";
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.hidden = NO;
     [self.view setBackgroundColor:[UIColor lightGrayColor]];
     [self initUI];
 }
@@ -31,18 +33,19 @@
 }
 
 - (void)initUI{
-    UIButton *bbb = [UIButton buttonWithType:UIButtonTypeSystem];
-    [bbb setFrame:CGRectMake(0, 50, 100, 30)];
-    [bbb setTitle:@"test" forState:UIControlStateNormal];
-    
-    [bbb addTarget:self action:@selector(createTabbar:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:bbb];
-    
-    UILabel *lab = [[UILabel alloc]init];
-    [lab setBounds:CGRectMake(0, 0, 180, 30)];
-    [lab setCenter:CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2)];
-    [self.view addSubview:lab];
-    _lab = lab;
+//    UIButton *bbb = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [bbb setFrame:CGRectMake(0, 50, 100, 30)];
+//    [bbb setTitle:@"test" forState:UIControlStateNormal];
+//    
+//    [bbb addTarget:self action:@selector(createTabbar:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:bbb];
+//    
+//    UILabel *lab = [[UILabel alloc]init];
+//    [lab setBounds:CGRectMake(0, 0, 180, 30)];
+//    [lab setCenter:CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2)];
+//    [self.view addSubview:lab];
+//    _lab = lab;
+    [self createTabbar:nil];
 }
 
 - (void)createTabbar:(id)sender{
@@ -50,7 +53,7 @@
         [_tabBar removeFromSuperview];
         _tabBar = nil;
     }
-    _tabBar = [[JovisTopTabBar alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 40)];
+    _tabBar = [[JovisTopTabBar alloc]initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 40)];
     [self.view addSubview:_tabBar];
     [_tabBar setBackgroundColor:[UIColor whiteColor]];
 //    [_tabBar setFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
@@ -68,8 +71,8 @@
 
 - (void)topTabBar:(JovisTopTabBar *)topTabBar didSelectTabIndex:(NSInteger)index{
     NSLog(@"select: %ld", index);
-    __weak UIButton *btn = topTabBar.tabsContainer.subviews[index];
-    [_lab setText:[NSString stringWithFormat:@"select: %ld %@", index, btn.titleLabel.text]];
+//    __weak UIButton *btn = topTabBar.tabsContainer.subviews[index];
+//    [_lab setText:[NSString stringWithFormat:@"select: %ld %@", index, btn.titleLabel.text]];
 }
 
 @end
