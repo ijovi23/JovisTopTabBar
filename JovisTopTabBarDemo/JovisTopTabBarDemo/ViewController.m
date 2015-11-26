@@ -33,31 +33,31 @@
 }
 
 - (void)initUI{
-//    UIButton *bbb = [UIButton buttonWithType:UIButtonTypeSystem];
-//    [bbb setFrame:CGRectMake(0, 50, 100, 30)];
-//    [bbb setTitle:@"test" forState:UIControlStateNormal];
-//    
-//    [bbb addTarget:self action:@selector(createTabbar:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:bbb];
-//    
-//    UILabel *lab = [[UILabel alloc]init];
-//    [lab setBounds:CGRectMake(0, 0, 180, 30)];
-//    [lab setCenter:CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2)];
-//    [self.view addSubview:lab];
-//    _lab = lab;
-    [self createTabbar:nil];
+    UIButton *bbb = [UIButton buttonWithType:UIButtonTypeSystem];
+    [bbb setFrame:CGRectMake(10, 20, 100, 30)];
+    [bbb setTitle:@"test" forState:UIControlStateNormal];
+    
+    [bbb addTarget:self action:@selector(createTabbar:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bbb];
+    
+    UILabel *lab = [[UILabel alloc]init];
+    [lab setBounds:CGRectMake(0, 0, 180, 30)];
+    [lab setCenter:CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2)];
+    [self.view addSubview:lab];
+    _lab = lab;
+//    [self createTabbar:nil];
 }
 
 - (void)createTabbar:(id)sender{
     if (_tabBar) {
         [_tabBar removeFromSuperview];
         _tabBar = nil;
+        return;
     }
-    _tabBar = [[JovisTopTabBar alloc]initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 40)];
+    _tabBar = [[JovisTopTabBar alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 40)];
     [self.view addSubview:_tabBar];
     [_tabBar setBackgroundColor:[UIColor whiteColor]];
-//    [_tabBar setFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
-    [_tabBar setTitleArray:[NSMutableArray arrayWithArray:@[@"首页",@"搜索",@"音乐",@"电影",@"个人"]]];
+    [_tabBar setTitleArray:[NSMutableArray arrayWithArray:@[@"Home",@"Discover",@"Music",@"Movie",@"Me"]]];
     [_tabBar setIndicatorLineHeight:1.0];
     [_tabBar setTitleFont:[UIFont systemFontOfSize:15]];
     UIColor *tc = [UIColor colorWithRed:0.8 green:0 blue:0 alpha:1];
@@ -71,8 +71,8 @@
 
 - (void)topTabBar:(JovisTopTabBar *)topTabBar didSelectTabIndex:(NSInteger)index{
     NSLog(@"select: %ld", index);
-//    __weak UIButton *btn = topTabBar.tabsContainer.subviews[index];
-//    [_lab setText:[NSString stringWithFormat:@"select: %ld %@", index, btn.titleLabel.text]];
+    __weak UIButton *btn = topTabBar.tabsContainer.subviews[index];
+    [_lab setText:[NSString stringWithFormat:@"select: %ld %@", index, btn.titleLabel.text]];
 }
 
 @end
