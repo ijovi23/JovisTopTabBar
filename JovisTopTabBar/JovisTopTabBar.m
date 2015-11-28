@@ -132,6 +132,9 @@
     if (_selectedTabIndex == index) {
         return;
     }
+    if (index < 0 || index >= _titleArray.count) {
+        return;
+    }
     [self _changeTab:index];
     
 }
@@ -155,8 +158,30 @@
     [self layoutUI];
 }
 
-- (void)layoutSubviews{
-    [super layoutSubviews];
+- (void)setTitleFont:(UIFont *)titleFont{
+    _titleFont = titleFont;
+    if (_tabsContainer) {
+        for (UIButton *tab in _tabsContainer.subviews) {
+            [tab.titleLabel setFont:_titleFont];
+        }
+    }
+}
+
+- (void)setIndicatorLineHeight:(CGFloat)indicatorLineHeight{
+    _indicatorLineHeight = indicatorLineHeight;
+    if (_indicatorLine) {
+        CGRect indFrame = _indicatorLine.frame;
+        indFrame.origin.y = _tabsContainer.frame.size.height - _indicatorLineHeight;
+        indFrame.size.height = _indicatorLineHeight;
+        [_indicatorLine setFrame:indFrame];
+    }
+}
+
+- (void)setIndicatorLineColor:(UIColor *)indicatorLineColor{
+    _indicatorLineColor = indicatorLineColor;
+    if (_indicatorLine) {
+        [_indicatorLine setBackgroundColor:_indicatorLineColor];
+    }
 }
 
 @end
