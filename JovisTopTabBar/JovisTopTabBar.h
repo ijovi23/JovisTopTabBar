@@ -26,6 +26,7 @@
 @property (strong, nonatomic) UIFont *titleFont;
 @property (strong, nonatomic) UIColor *indicatorLineColor;
 @property (assign, nonatomic) CGFloat indicatorLineHeight;
+
 @property (weak, nonatomic) id<JovisTopTabBarDelegate> delegate;
 
 @property (assign, nonatomic) NSInteger defaultTabIndex;
@@ -34,9 +35,11 @@
 @property (weak, nonatomic, readonly) UIButton *prevSelectedTabButton;
 @property (assign, nonatomic, readonly) NSInteger prevSelectedTabIndex;
 
-@property (weak, nonatomic) UIView *tabsContainer;
-//@property (strong, nonatomic) NSMutableArray<UIButton*> *tabButtonsArray;
-@property (weak, nonatomic) UIView *indicatorLine;
+@property (weak, nonatomic, readonly) UIView *tabsContainer;
+
+@property (weak, nonatomic, readonly) UIView *indicatorLine;
+
+@property (weak, nonatomic, readonly) CALayer *bottomLayer;
 
 - (instancetype)initWithTitles:(NSArray*)titles;
 - (void)initializeUI;

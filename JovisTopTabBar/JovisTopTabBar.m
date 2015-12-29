@@ -68,6 +68,13 @@
     }
     [_indicatorLine setBackgroundColor:_indicatorLineColor];
     
+    if (!_bottomLayer) {
+        CALayer *bottomLayer = [CALayer layer];
+        [self.layer addSublayer:bottomLayer];
+        _bottomLayer = bottomLayer;
+    }
+    [_bottomLayer setBackgroundColor:[UIColor colorWithRed:0.83 green:0.83 blue:0.83 alpha:1].CGColor];
+    
     _selectedTabIndex = _defaultTabIndex;
     _selectedTabButton = [_tabsContainer.subviews objectAtIndex:_selectedTabIndex];
     [self layoutUI];
@@ -151,6 +158,7 @@
         
         [_indicatorLine setFrame:CGRectMake(_selectedTabButton.frame.origin.x, _selectedTabButton.frame.size.height - _indicatorLineHeight, _selectedTabButton.frame.size.width, _indicatorLineHeight)];
     }
+    [_bottomLayer setFrame:CGRectMake(0, self.frame.size.height, self.frame.size.width, 0.5)];
 }
 
 - (void)setFrame:(CGRect)frame{
