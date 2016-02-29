@@ -23,7 +23,7 @@
     self.title = @"Demo";
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.hidden = NO;
-    [self.view setBackgroundColor:[UIColor lightGrayColor]];
+    [self.view setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.5 alpha:1]];
     [self initUI];
 }
 
