@@ -158,7 +158,7 @@
         
         [_indicatorLine setFrame:CGRectMake(_selectedTabButton.frame.origin.x, _selectedTabButton.frame.size.height - _indicatorLineHeight, _selectedTabButton.frame.size.width, _indicatorLineHeight)];
     }
-    [_bottomLayer setFrame:CGRectMake(0, self.frame.size.height, self.frame.size.width, 0.5)];
+    [_bottomLayer setFrame:CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5)];
 }
 
 - (void)setFrame:(CGRect)frame{
