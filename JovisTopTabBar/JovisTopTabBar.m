@@ -112,6 +112,7 @@
     CGRect oldFrame = _indicatorLine.frame;
     CGRect newFrame = oldFrame;
     newFrame.origin.x = _selectedTabButton.frame.origin.x;
+    newFrame.size.width = _selectedTabButton.frame.size.width;
     CGRect tranFrame;
     if (newFrame.origin.x > oldFrame.origin.x) {
         tranFrame = oldFrame;
